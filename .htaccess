@@ -1,0 +1,36 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#this is for user panel
+
+RewriteRule ^home?$ home.php
+RewriteRule ^dashboard?$ dashboard.php
+RewriteRule ^logout?$ logout.php
+RewriteRule ^deleted-articles?$ deleted-articles.php
+RewriteRule ^about-us?$ about-us.php
+RewriteRule ^contact-us?$ contact-us.php
+
+#user panel ends here
+
+#this is for admin panel
+
+RewriteRule ^admin/dashboard?$ admin/dashboard.php
+RewriteRule ^admin/logout?$ admin/logout.php
+RewriteRule ^admin/article-list?$ admin/article-list.php
+RewriteRule ^admin/deleted-articles?$ admin/deleted-articles.php
+RewriteRule ^admin/all_stories?$ admin/all_stories.php
+RewriteRule ^admin/admin_edit_story/([0-9]+)$ admin/admin_edit_story.php?id=$1
+RewriteRule ^admin/admin_delete_story/([0-9]+)$ admin/admin_delete_story.php?id=$1
+RewriteRule ^admin/admin_story_undo/([0-9]+)$ admin/admin_story_undo.php?userid=$1
+RewriteRule ^admin/create-admin?$ admin/create-admin.php
+RewriteRule ^admin/admin-list?$ admin/admin-list.php
+RewriteRule ^admin/admin-edit/([0-9]+)$ admin/admin-edit.php?adminid=$1
+RewriteRule ^admin/admin-delete/([0-9]+)$ admin/admin-delete.php?adminid=$1
+RewriteRule ^admin/admin-delete-undo/([0-9]+)$ admin/admin-delete-undo.php?adminid=$1
+RewriteRule ^admin/contacts?$ admin/contacts.php
+RewriteRule ^admin/admin-delete-contact/([0-9]+)$ admin/admin_delete_contact.php?id=$1
+RewriteRule ^admin/admin-delete-contact-undo/([0-9]+)$ admin/admin_delete_contact_undo.php?undo_id=$1
+
+#admin panel ends here
